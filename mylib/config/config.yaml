@@ -1,0 +1,9 @@
+# config/config.yaml
+
+model:
+  input_size: [416, 416, 3]
+  num_classes: 80
+  anchors: [[10, 13], [16, 30], [33, 23], [30, 61], [62, 45], [59, 119], [116, 90], [156, 198], [373, 326]]
+  backbone:
+    type: Darknet53
+    layers: [1, 2, 8, 8, 4]

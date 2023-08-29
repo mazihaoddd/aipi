@@ -1,0 +1,9 @@
+# config/preprocessing.yaml
+
+preprocessing:
+  image_size: [416, 416]
+  normalize: true
+  augmentation:
+    flip: true
+    jitter: 0.3
+    hue: 0.1
