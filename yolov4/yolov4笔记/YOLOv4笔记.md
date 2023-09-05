@@ -10,7 +10,7 @@
 网络级大小-允许查看对象周围的上下文
 超出网络大小-增加图像点和最终激活之间的连接数
 
-**一个带有bag-of-specials集成的增强型架构**：作者尝试了多种骨干架构， 如ResNeXt50 、EfficientNet-B3和Darknet-53。表现最好的架构是对Darknet-53的修改，采用跨阶段部分连接（CSPNet），以Mish激活函数作为骨干。对于颈部，他们使用了YOLOv3-spp中的修改版空间金字塔集合（SPP）和YOLOv3中的多尺度预测，但用修改版的路径聚合网络（PANet）代替FPN，以及修改的空间注意模块（SAM）。最后，对于检测头，他们使用YOLOv3中的锚。因此，该模型被称为CSPDarknet53-PANet-SPP。添加到Darknet-53中的跨阶段部分连接（CSP）有助于减少模型的计算量，同时保持相同的精度。与YOLOv3-spp中一样，SPP块在不影响推理速度的情况下增加了感受野。修改后的PANet版本将特征串联起来，而不是像原PANet论文中那样将其添加。
+**一个带有bag-of-specials集成的增强型架构**：作者尝试了多种骨干架构， 如ResNeXt50 、EfficientNet-B3和Darknet-53。表现最好的架构是对Darknet-53的修改，采用跨阶段部分连接（CSPNet），以Mish激活函数作为骨干。对于颈部，他们使用了YOLOv3-spp中的修改版空间金字塔池化（SPP）和YOLOv3中的多尺度预测，但用修改版的路径聚合网络（PANet）代替FPN，以及修改的空间注意模块（SAM）。最后，对于检测头，他们使用YOLOv3中的锚。因此，该模型被称为CSPDarknet53-PANet-SPP。添加到Darknet-53中的跨阶段部分连接（CSP）有助于减少模型的计算量，同时保持相同的精度。与YOLOv3-spp中一样，SPP块在不影响推理速度的情况下增加了感受野。修改后的PANet版本将特征串联起来，而不是像原PANet论文中那样将其添加。
 
 作者未使用跨gpu批处理归一化（CGBN或SyncBN)或昂贵的专用设备。使得在传统的图形处理器上可以再现结果。
 
